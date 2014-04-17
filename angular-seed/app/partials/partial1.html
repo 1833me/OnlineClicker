@@ -1,7 +1,7 @@
 <div>
  <div id="coder-button" ng-click="writeCode()"></div>
  <h2 id="workers">Workers</h2>
- <div id="money">Monies:{{Math.floor(money)}}</div><br>
+ <div id="money">Monies:{{money}}</div><br>
  <div id="upgrades">
 	<div><button id="upgrade-multi-2" ng-click="upgrade(100, 1)">$100: 2x Monies</div>
 	<div><button id="upgrade-multi-4" ng-click="upgrade(1000,2)">$1,000: 4x Monies</div>
@@ -10,8 +10,17 @@
 	<div><button id="upgrade-multi-32" ng-click="upgrade(1000000, 5)">$1,000,000: 32x Monies</div>
 	<div><button id="upgrade-multi-64" ng-click="upgrade(10000000,6)">$10,000,000: 64x Monies</div>
  </div>
+ <div id="workers">
+	<div><button id="work1" ng-click="work(100, 1)">$100: Intern</div>
+	<div><button id="work2" ng-click="work(1000,2)">$1,000: Coder</div>
+	<div><button id="work3" ng-click="work(10000, 3)">$10,000: College Grad</div>
+	<div><button id="work4" ng-click="work(100000,4)">$100,000: Curtis Larsen</div>
+	<div><button id="work5" ng-click="work(1000000, 5)">$1,000,000: Einstein</div>
+	<div><button id="work6" ng-click="work(10000000,6)">$10,000,000: DJ Holt</div>
+ </div>
+
  <div id ="footer">
-  <p> All the witty code crap goes here!</p>
+  <p>{{code}}</p>
  </div>
 </div>
 <!--<div id="search">
