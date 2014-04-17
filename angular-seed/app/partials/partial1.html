@@ -1,7 +1,7 @@
 <div>
  <div id="coder-button" ng-click="writeCode()"></div>
  <h2 id="workers">Workers</h2>
- <div id="money">Monies:{{money}}</div><br>
+ <div id="money">Monies:{{Math.floor(money)}}</div><br>
  <div id="upgrades">
 	<div><button id="upgrade-multi-2" ng-click="upgrade(100, 1)">$100: 2x Monies</div>
 	<div><button id="upgrade-multi-4" ng-click="upgrade(1000,2)">$1,000: 4x Monies</div>

@@ -8,12 +8,19 @@ angular.module('myApp.controllers', [])
 		/* TEMPORARY */
 		$scope.money = 0;
 		$scope.multiplier = 1;
+		$scope.workers = {intern: 0,
+				coder: 0,
+				college_graduate: 0,
+				curtis_larsen: 0,
+				einstein: 0,
+				glados: 0,
+				dj_holt: 0};
 		/* TEMPORARY */
 		$scope.writeCode = function(){
-			$scope.money = $scope.money + (1 * $scope.multiplier);
+			$scope.money += (1 * $scope.multiplier);
 		};
 		$scope.spendMoney = function(money){
-			$scope.money = $scope.money - money;
+			$scope.money -= money;
 		};
 
 		$scope.upgrade = function(money, id){
@@ -43,7 +50,14 @@ angular.module('myApp.controllers', [])
 				
 			}
 		};
-
+		
+		$scope.work = function(){
+			$scope.money += .1 * $scope.workers.intern * $scope.multiplier
+			$scope.money += .5 * $scope.workers.coder * $scope.multiplier
+			$scope.money += 1 * $scope.workers.college_graduate * $scope.multiplier
+			setTimeout($scope.work, 100)
+			
+		$scope.work()
 		/*
 		$scope.searchMovies = function(){
 			Movies.query( {search: $scope.searchQuery}, function(response){
