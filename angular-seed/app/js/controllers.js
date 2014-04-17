@@ -55,7 +55,7 @@ angular.module('myApp.controllers', [])
 			$scope.money += .1 * $scope.workers.intern * $scope.multiplier
 			$scope.money += .5 * $scope.workers.coder * $scope.multiplier
 			$scope.money += 1 * $scope.workers.college_graduate * $scope.multiplier
-			setTimeout($scope.work, 100)
+			setTimeout($scope.work, 1000)
 			
 		$scope.work()
 		/*
