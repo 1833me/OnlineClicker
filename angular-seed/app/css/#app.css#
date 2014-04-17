@@ -1,0 +1,27 @@
+/* app css stylesheet */
+
+#coder-button {
+    width: 200px;
+    height: 200px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px; 
+    background-color: #000;
+    font-color: #FFF;
+}
+#upgrades {
+    background-color: #eee;
+    position:relative;
+    left:400px;	
+}
+#worker {
+    background-color: #eee;
+    position:relative;
+    left:600px;
+}
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ccc;
+}
