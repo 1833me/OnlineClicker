@@ -51,11 +51,54 @@ angular.module('myApp.controllers', [])
 			}
 		};
 		
+		$scope.addWorker = function(id){
+			if (id === 1){
+				if (self.money >= 100){
+					$scope.workers.intern += 1
+					$scope.money -= 100
+				}
+			}
+			if (id === 2){
+				if (self.money >= 1000){
+					$scope.workers.coder += 1
+					$scope.money -= 1000
+				}
+			}
+			if (id === 3){
+				if (self.money >= 10000){
+					$scope.workers.collage_graduate += 1
+					$scope.money -= 10000
+				}
+			}
+			if (id === 4){
+				if (self.money >= 100000){
+					$scope.workers.curtis_larsen += 1
+					$scope.money -= 100000
+				}
+			}
+			if (id === 5){
+				if (self.money >= 1000000){
+					$scope.workers.einstein += 1
+					$scope.money -= 1000000
+				}
+			}
+			if (id === 6){
+				if (self.money >= 10000000){
+					$scope.workers.dj_holt += 1
+					$scope.money -= 10000000
+				}
+			}
+		}
+
 		$scope.work = function(){
-			$scope.money += .1 * $scope.workers.intern * $scope.multiplier
-			$scope.money += .5 * $scope.workers.coder * $scope.multiplier
-			$scope.money += 1 * $scope.workers.college_graduate * $scope.multiplier
-			setTimeout($scope.work, 1000)
+			$scope.money += .1 * $scope.workers.intern * $scope.multiplier;
+			$scope.money += .5 * $scope.workers.coder * $scope.multiplier;
+			$scope.money += 1 * $scope.workers.college_graduate * $scope.multiplier;
+			$scope.money += 5 * $scope.workers.curtis_larsen * $scope.multiplier;
+			$scope.money += 50 * $scope.workers.einstein * $scope.multiplier;
+			$scope.money += 200 * $scope.workers.dj_holt * $scope.multiplier;
+			setTimeout($scope.work, 1000);
+			};
 			
 		$scope.work()
 		/*
