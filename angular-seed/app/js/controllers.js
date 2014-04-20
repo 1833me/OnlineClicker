@@ -5,17 +5,23 @@
 angular.module('myApp.controllers', [])
 	.controller('MyCtrl1', ['$scope',/*, 'Movies', */ function($scope /*, Movies*/) {
 		$scope.data = {};
+		$scope.price_increase = 1.05;
 		/* TEMPORARY */
-		$scope.money = 200;
+		$scope.money = 100;
 		$scope.floored_money = $scope.money;
 		$scope.multiplier = 1;
-		$scope.workers = {intern: 0,
-				coder: 0,
-				college_graduate: 0,
-				curtis_larsen: 0,
-				einstein: 0,
-				glados: 0,
-				dj_holt: 0};
+		$scope.workers = {intern: {amount:0,
+					price:100},
+				coder: {amount:0,
+					price:1000},
+				college_graduate: {amount:0,
+					price:10000},
+				curtis_larsen: {amount:0,
+					price:100000},
+				einstein: {amount:0,
+					price:1000000},
+				dj_holt: {amount:0,
+					price:10000000}};
 		/* TEMPORARY */
 		$scope.writeCode = function(){
 			$scope.changeMoney($scope.multiplier)
@@ -76,24 +82,30 @@ angular.module('myApp.controllers', [])
 			}
 			else {
 				if (id === 1){
-					$scope.workers.intern += 1
+					$scope.workers.intern.amount += 1;
+					$scope.workers.intern.price = Math.floor($scope.workers.intern.price * $scope.price_increase)
 				}
 				else if (id === 2){
-					$scope.workers.coder += 1
+					$scope.workers.coder.amount += 1;
+					$scope.workers.coder.price = Math.floor($scope.workers.coder.price  * $scope.price_increase)
 				}
 				else if (id === 3){
-					$scope.workers.college_graduate += 1
+					$scope.workers.college_graduate.amount += 1;
+					$scope.workers.college_graduate.price = Math.floor($scope.workers.college_graduate.price  * $scope.price_increase)
 				}
 				else if (id === 4){
-					$scope.workers.curtis_larsen += 1
+					$scope.workers.curtis_larsen.amount += 1;
+					$scope.workers.curtis_larsen.price = Math.floor($scope.workers.curtis_larsen.price  * $scope.price_increase)
 				}
 				else if (id === 5){
-					$scope.workers.einstein += 1
+					$scope.workers.einstein.amount += 1;
+					$scope.workers.einstein.price = Math.floor($scope.workers.einstein.price  * $scope.price_increase)
 				}
 				else if (id === 6){
-					$scope.workers.dj_holt += 1
+					$scope.workers.dj_holt.amount += 1;
+					$scope.workers.dj_holt.price = Math.floor($scope.workers.dj_holt.price  * $scope.price_increase)
 				}
-				$scope.changeMoney(-1 * money)
+				$scope.changeMoney(-1 * money);
 			}
 		}
 
