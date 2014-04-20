@@ -29,21 +29,42 @@ angular.module('myApp.controllers', [])
 				$scope.changeMoney(-1 * money);
 				if (id === 1){
 					$scope.multiplier = 2;
+					$scope.upm2 = true;
 				}
 				else if (id === 2){
 					$scope.multiplier = 4;
+					$scope.upm2 = true;
+					$scope.upm4 = true;
 				}
 				else if (id === 3){
 					$scope.multiplier = 8;
+					$scope.upm2 = true;
+					$scope.upm4 = true;
+					$scope.upm8 = true;
 				}
 				else if (id === 4){
 					$scope.multiplier = 16;
+					$scope.upm2 = true;
+					$scope.upm4 = true;
+					$scope.upm8 = true;
+					$scope.upm16 = true;
 				}
 				else if (id === 5){
 					$scope.multiplier = 32;
+					$scope.upm2 = true;	
+					$scope.upm4 = true;
+					$scope.upm8 = true;
+					$scope.upm16 = true;
+					$scope.upm32= true;
 				}
 				else if (id === 6){
 					$scope.multiplier = 64;
+					$scope.upm2 = true;
+					$scope.upm4 = true;
+					$scope.upm8 = true;
+					$scope.upm16 = true;
+					$scope.upm32 = true;
+					$scope.upm64 = true;
 				}
 				
 			}
@@ -61,7 +82,7 @@ angular.module('myApp.controllers', [])
 					$scope.workers.coder += 1
 				}
 				else if (id === 3){
-					$scope.workers.collage_graduate += 1
+					$scope.workers.college_graduate += 1
 				}
 				else if (id === 4){
 					$scope.workers.curtis_larsen += 1
@@ -78,11 +99,11 @@ angular.module('myApp.controllers', [])
 
 		$scope.work = function(){
 			$scope.changeMoney(.1 * $scope.workers.intern * $scope.multiplier);
-			$scope.changeMoney(.5 * $scope.workers.coder * $scope.multiplier);
-			$scope.changeMoney(1 * $scope.workers.college_graduate * $scope.multiplier);
-			$scope.changeMoney(5 * $scope.workers.curtis_larsen * $scope.multiplier);
-			$scope.changeMoney(50 * $scope.workers.einstein * $scope.multiplier);
-			$scope.changeMoney(200 * $scope.workers.dj_holt * $scope.multiplier);
+			$scope.changeMoney(1 * $scope.workers.coder * $scope.multiplier);
+			$scope.changeMoney(10 * $scope.workers.college_graduate * $scope.multiplier);
+			$scope.changeMoney(101 * $scope.workers.curtis_larsen * $scope.multiplier);
+			$scope.changeMoney(1000 * $scope.workers.einstein * $scope.multiplier);
+			$scope.changeMoney(20000 * $scope.workers.dj_holt * $scope.multiplier);
 			$scope.$apply();
 			setTimeout($scope.work, 1000);
 			};
