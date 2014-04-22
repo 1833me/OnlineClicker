@@ -5,23 +5,32 @@
 angular.module('myApp.controllers', [])
 	.controller('MyCtrl1', ['$scope',/*, 'Movies', */ function($scope /*, Movies*/) {
 		$scope.data = {};
-		$scope.data.price_increase = 1.05;
+		$scope.data.price_increase = 1.25;
 		/* TEMPORARY */
-		$scope.data.money = 200;
+		$scope.data.money = 0;
 		$scope.data.floored_money = $scope.data.money;
 		$scope.data.multiplier = 1;
-		$scope.data.workers = {intern:
+		$scope.data.workers = {
+                noob:
+                    {amount:0,
+                     price:10},
+                intern:
 					{amount:0,
 					price:100},
-				coder: {amount:0,
+				coder:
+                    {amount:0,
 					price:1000},
-				college_graduate: {amount:0,
+				college_graduate:
+                    {amount:0,
 					price:10000},
-				curtis_larsen: {amount:0,
+				curtis_larsen:
+                    {amount:0,
 					price:100000},
-				einstein: {amount:0,
+				einstein:
+                    {amount:0,
 					price:1000000},
-				dj_holt: {amount:0,
+				dj_holt:
+                    {amount:0,
 					price:10000000}};
 		/* TEMPORARY */
 		$scope.writeCode = function(){
@@ -77,44 +86,44 @@ angular.module('myApp.controllers', [])
 			}
 		};
 		$scope.addWorker = function(money, id){
-			console.log(money);
 			if (money > $scope.data.money){
 				alert("FAIL!");
 			}
 			else {
-				if (id === 1){
-					console.log($scope.data.workers.intern);
-					console.log($scope.data.workers.intern.amount);
-					console.log($scope.data.workers.intern.price);
+                $scope.changeMoney(-1 * money);
+                if (id === 0){
+                    $scope.data.workers.noob.amount += 1;
+                    $scope.data.workers.noob.price = Math.floor($scope.data.workers.noob.price * $scope.data.price_increase)
+                }
+				else if (id === 1){
 					$scope.data.workers.intern.amount += 1;
-					$scope.data.workers.intern.price = Math.floor($scope.workers.intern.price * $scope.data.price_increase)
+					$scope.data.workers.intern.price = Math.floor($scope.data.workers.intern.price * $scope.data.price_increase)
 				}
 				else if (id === 2){
 					$scope.data.workers.coder.amount += 1;
-					$scope.data.workers.coder.price = Math.floor($scope.workers.coder.price  * $scope.data.price_increase)
+					$scope.data.workers.coder.price = Math.floor($scope.data.workers.coder.price  * $scope.data.price_increase)
 				}
 				else if (id === 3){
 					$scope.data.workers.college_graduate.amount += 1;
-					$scope.data.workers.college_graduate.price = Math.floor($scope.workers.college_graduate.price  * $scope.data.price_increase)
+					$scope.data.workers.college_graduate.price = Math.floor($scope.data.workers.college_graduate.price  * $scope.data.price_increase)
 				}
 				else if (id === 4){
 					$scope.data.workers.curtis_larsen.amount += 1;
-					$scope.data.workers.curtis_larsen.price = Math.floor($scope.workers.curtis_larsen.price  * $scope.data.price_increase)
+					$scope.data.workers.curtis_larsen.price = Math.floor($scope.data.workers.curtis_larsen.price  * $scope.data.price_increase)
 				}
 				else if (id === 5){
 					$scope.data.workers.einstein.amount += 1;
-					$scope.data.workers.einstein.price = Math.floor($scope.workers.einstein.price  * $scope.data.price_increase)
+					$scope.data.workers.einstein.price = Math.floor($scope.data.workers.einstein.price  * $scope.data.price_increase)
 				}
 				else if (id === 6){
 					$scope.data.workers.dj_holt.amount += 1;
-					$scope.data.workers.dj_holt.price = Math.floor($scope.workers.dj_holt.price  * $scope.data.price_increase)
+					$scope.data.workers.dj_holt.price = Math.floor($scope.data.workers.dj_holt.price  * $scope.data.price_increase)
 				}
-				$scope.changeMoney(-1 * money);
 			}
-		}
+		};
 		$scope.work = function(){
-
-			$scope.changeMoney(.1 * $scope.data.workers.intern.amount * $scope.data.multiplier);
+            $scope.changeMoney(.1 * $scope.data.workers.noob.amount * $scope.data.multiplier);
+			$scope.changeMoney(.5 * $scope.data.workers.intern.amount * $scope.data.multiplier);
 			$scope.changeMoney(1 * $scope.data.workers.coder.amount * $scope.data.multiplier);
 			$scope.changeMoney(10 * $scope.data.workers.college_graduate.amount * $scope.data.multiplier);
 			$scope.changeMoney(101 * $scope.data.workers.curtis_larsen.amount * $scope.data.multiplier);
@@ -129,7 +138,7 @@ angular.module('myApp.controllers', [])
 			$scope.data.money += mooney;
 			$scope.data.floored_money = Math.floor($scope.data.money);
 		};
-		$scope.work()
+		$scope.work();
 		/*
 		$scope.searchMovies = function(){
 			Movies.query( {search: $scope.searchQuery}, function(response){
