@@ -131,7 +131,10 @@ angular.module('myApp.controllers', [])
 			$scope.changeMoney(101 * $scope.data.workers.curtis_larsen.amount * $scope.data.multiplier);
 			$scope.changeMoney(1000 * $scope.data.workers.einstein.amount * $scope.data.multiplier);
 			$scope.changeMoney(20000 * $scope.data.workers.dj_holt.amount * $scope.data.multiplier);
-			$scope.$apply();
+            if(!$scope.$$phase) {
+                $scope.$apply();  
+            }
+
 			setTimeout($scope.work, 1000);
 			};
 			
