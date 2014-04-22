@@ -10,7 +10,7 @@
   <h2>Stats</h2>
   <div id="stats-money"><b>Monies:</b> ${{data.floored_money}}</div><br>
   <div id="stats-upgrades"><b>Upgrades: </b>{{data.multiplier}}X</div><br>
-     <div id="stats-interns"><b>n00bs: </b>{{data.workers.noob.amount}}</div><br>
+     <div id="stats-noobs"><b>n00bs: </b>{{data.workers.noob.amount}}</div><br>
   <div id="stats-interns"><b>Interns: </b>{{data.workers.intern.amount}}</div><br>
   <div id="stats-coders"><b>Coders: </b>{{data.workers.coder.amount}}</div><br>
   <div id="stats-college-graduates"><b>College Grads: </b>{{data.workers.college_graduate.amount}}</div><br>
@@ -20,12 +20,12 @@
  </div>
  <div id="upgrades">
         <h2>Upgrades</h2>
-	<div><button id="upgrade-multi-2" ng-click="upgrade(1000, 1)"ng-hide="data.upm2">$1000: 2x Monies</button></div>
-	<div><button id="upgrade-multi-4" ng-click="upgrade(10000,2)"ng-hide="data.upm4">$10000: 4x Monies</button></div>
-	<div><button id="upgrade-multi-8" ng-click="upgrade(100000, 3)"ng-hide="data.upm8">$100000: 8x Monies</button></div>
-	<div><button id="upgrade-multi-16" ng-click="upgrade(1000000,4)"ng-hide="data.upm16">$1000000: 16x Monies</button></div>
-	<div><button id="upgrade-multi-32" ng-click="upgrade(10000000, 5)"ng-hide="data.upm32">$10000000: 32x Monies</button></div>
-	<div><button id="upgrade-multi-64" ng-click="upgrade(100000000,6)"ng-hide="data.upm64">$100000000: 64x Monies</button></div>
+	<div><button id="upgrade-multi-2" ng-click="upgrade(1000, 1)" ng-hide="data.upm2">$1000: 2x Monies</button></div>
+	<div><button id="upgrade-multi-4" ng-click="upgrade(10000,2)" ng-hide="data.upm4">$10000: 4x Monies</button></div>
+	<div><button id="upgrade-multi-8" ng-click="upgrade(100000, 3)" ng-hide="data.upm8">$100000: 8x Monies</button></div>
+	<div><button id="upgrade-multi-16" ng-click="upgrade(1000000,4)" ng-hide="data.upm16">$1000000: 16x Monies</button></div>
+	<div><button id="upgrade-multi-32" ng-click="upgrade(10000000, 5)" ng-hide="data.upm32">$10000000: 32x Monies</button></div>
+	<div><button id="upgrade-multi-64" ng-click="upgrade(100000000,6)" ng-hide="data.upm64">$100000000: 64x Monies</button></div>
  </div>
  <div id="workers">
 	<h2>Workers</h2>
@@ -38,8 +38,8 @@
 	<div><button id="work6" ng-click="addWorker(data.workers.dj_holt.price, 6)">${{data.workers.dj_holt.price}}: DJ Holt</button></div>
  </div>
 
- <div id ="footer">
-  <p>{{code}}Savannah</p>
+ <div id="footer">
+  <pre id="footer-code">{{data.code.content}}</pre>
  </div>
 </div>
 <!--<div id="search">

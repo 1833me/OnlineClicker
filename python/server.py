@@ -7,12 +7,12 @@ def dict_factory(cursor, row):
         d[col[0]] = row[idx]
     return d
 
-db_con = sqlite3.connect("movies.db")
+db_con = sqlite3.connect("clicker.db")
 db_con.row_factory = dict_factory
 db_cur = db_con.cursor()
 
 @get("/api/movies", method=['GET', 'OPTIONS'])
-def get_movies():
+def get_code():
     if request.method == 'OPTIONS':
         return {}
     search = request.query.search
@@ -28,13 +28,21 @@ def get_movie(movie_id):
     db_cur.execute("SELECT * FROM movies WHERE id = ?", [movie_id])
     movie = db_cur.fetchone()
     return movie
+@get("/api/codes/random")
+def get_random_code():
+    db_cur.execute("SELECT * FROM code_lines ORDER BY RANDOM() LIMIT 1")
+    code = db_cur.fetchone()
+    return code
 
 @post("/api/movies")
 def newMovie():
-    movie = request.json
-    db_cur.execute("INSERT INTO movies (name, rating, release_date, poster_url) VALUES (?, ?, ?, ?)", [movie["name"], movie["rating"], movie["release_date"], movie["poster_url"]])
+    """
+    code_lines = request.json
+    db_cur.execute("INSERT INTO code_lines (content) VALUES (?)")
     db_con.commit()
     return "success"
+    """
+    return
 
 @hook('after_request')
 def set_headers():

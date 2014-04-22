@@ -3,13 +3,14 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-	.controller('MyCtrl1', ['$scope',/*, 'Movies', */ function($scope /*, Movies*/) {
+	.controller('MyCtrl1', ['$scope', 'CodeLine',  function($scope , CodeLine) {
 		$scope.data = {};
 		$scope.data.price_increase = 1.25;
 		/* TEMPORARY */
 		$scope.data.money = 0;
 		$scope.data.floored_money = $scope.data.money;
 		$scope.data.multiplier = 1;
+        $scope.data.code = {};
 		$scope.data.workers = {
                 noob:
                     {amount:0,
@@ -19,7 +20,7 @@ angular.module('myApp.controllers', [])
 					price:100},
 				coder:
                     {amount:0,
-					price:1000},
+					price:250},
 				college_graduate:
                     {amount:0,
 					price:10000},
@@ -35,6 +36,7 @@ angular.module('myApp.controllers', [])
 		/* TEMPORARY */
 		$scope.writeCode = function(){
 			$scope.changeMoney($scope.data.multiplier)
+            $scope.displayCodeLine();
 		};
 
 		$scope.upgrade = function(money, id){
@@ -124,7 +126,7 @@ angular.module('myApp.controllers', [])
 		$scope.work = function(){
             $scope.changeMoney(.1 * $scope.data.workers.noob.amount * $scope.data.multiplier);
 			$scope.changeMoney(.5 * $scope.data.workers.intern.amount * $scope.data.multiplier);
-			$scope.changeMoney(1 * $scope.data.workers.coder.amount * $scope.data.multiplier);
+			$scope.changeMoney(/*1 **/ $scope.data.workers.coder.amount * $scope.data.multiplier);
 			$scope.changeMoney(10 * $scope.data.workers.college_graduate.amount * $scope.data.multiplier);
 			$scope.changeMoney(101 * $scope.data.workers.curtis_larsen.amount * $scope.data.multiplier);
 			$scope.changeMoney(1000 * $scope.data.workers.einstein.amount * $scope.data.multiplier);
@@ -138,6 +140,11 @@ angular.module('myApp.controllers', [])
 			$scope.data.money += mooney;
 			$scope.data.floored_money = Math.floor($scope.data.money);
 		};
+        $scope.displayCodeLine = function() {
+            CodeLine.get({lineId: "random"}, function (code_line) {
+                $scope.data.code = code_line;
+            });
+        };
 		$scope.work();
 		/*
 		$scope.searchMovies = function(){
