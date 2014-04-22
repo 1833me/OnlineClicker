@@ -67,7 +67,7 @@ html, body {
 }  
 #click-box {
     text-align: center;
-    width: 301px;
+    width: 200px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

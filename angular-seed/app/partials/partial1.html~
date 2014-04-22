@@ -4,7 +4,7 @@
  </div> 
  <div id ="click-box">
   <h2>Click!!!</h2>
-
+  <div id="coder-button" ng-click="writeCode()"></div>
   <div id="mccade-button" ng-click="writeCode()"></div>
  </div>
  <div id="stats">
