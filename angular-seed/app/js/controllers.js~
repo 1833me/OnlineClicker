@@ -21,7 +21,6 @@ angular.module('myApp.controllers', [])
   };
   $scope.update = function(user) {
     $scope.master = angular.copy(user);
-    $scope.splash_page_active = false;
   };
  
   $scope.reset = function() {

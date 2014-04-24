@@ -14,6 +14,18 @@
     min-width:800px;
 
 }
+
+#splash-page {
+    width:300px;
+    height:120px;
+    background-color: #9EFFEF;
+    position: fixed;
+    left: 35%;
+    top: 35%;
+    border:5px;
+    border-radius:15px;
+    padding: 5px;
+}
 button {
  cursor:pointer;
 }
@@ -77,7 +89,7 @@ html, body {
     float: left;
 } 
 #upgrades {
-    background-color: #80fff1;
+    background-color: #9EFFEF;
     
   
     -webkit-touch-callout: none;

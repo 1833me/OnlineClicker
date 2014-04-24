@@ -12,7 +12,19 @@
     user-select: none;
     position: relative;
     min-width:800px;
-    
+
+}
+
+#splash-page {
+    width:300px;
+    height:120px;
+    background-color: #9EFFEF;
+    position: fixed;
+    left: 35%;
+    top: 50%;
+    border:5px;
+    border-radius:15px;
+    padding: 5px;
 }
 button {
  cursor:pointer;
@@ -35,7 +47,7 @@ html, body {
     -moz-border-radius: 100px;
     border-radius: 100px; 
     background-color: #80fff1;
-    font-color: #FFF;
+    text-color: #FFF;
     position:relative;
     top: -20px;
     -webkit-touch-callout: none;
@@ -67,7 +79,7 @@ html, body {
 }  
 #click-box {
     text-align: center;
-    width: 200px;
+    width: 301px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -77,7 +89,7 @@ html, body {
     float: left;
 } 
 #upgrades {
-    background-color: #80fff1;
+    background-color: #9EFFEF;
     
   
     -webkit-touch-callout: none;
@@ -137,7 +149,17 @@ html, body {
     bottom: 0px;
     width: 100%;
     background-color: #000;
-    font-color: #FFF;
+    font-color: #000;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#footer-code {
+    color: #FFF;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
