@@ -132,7 +132,7 @@ angular.module('myApp.controllers', [])
 			$scope.changeMoney(1000 * $scope.data.workers.einstein.amount * $scope.data.multiplier);
 			$scope.changeMoney(20000 * $scope.data.workers.dj_holt.amount * $scope.data.multiplier);
             if(!$scope.$$phase) {
-                $scope.$apply();  
+                $scope.$apply();
             }
 
 			setTimeout($scope.work, 1000);
@@ -182,3 +182,12 @@ angular.module('myApp.controllers', [])
 	.controller('MyCtrl2', [function() {
 
 	}]);
+
+var init = function () {
+
+
+    // check if there is query in url
+    // and fire search in case its value is not empty
+};
+// and fire it after definition
+init();
