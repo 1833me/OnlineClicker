@@ -210,11 +210,6 @@ angular.module('myApp.controllers', [])
 
 	}]);
 
-var init = function () {
-
-
     // check if there is query in url
     // and fire search in case its value is not empty
-};
 // and fire it after definition
-init();

@@ -34,15 +34,12 @@ def get_random_code():
     code = db_cur.fetchone()
     return code
 
-@post("/api/movies")
-def newMovie():
-    """
-    code_lines = request.json
-    db_cur.execute("INSERT INTO code_lines (content) VALUES (?)")
+@post("/codes/user")
+def newUser():
+    user = request.json
+    db_cur.execute("INSERT INTO users (email, password) VALUES (?, ?, ?)", [user["email"], user["password"], user["gender"]])
     db_con.commit()
     return "success"
-    """
-    return
 
 @hook('after_request')
 def set_headers():
